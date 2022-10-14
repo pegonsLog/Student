@@ -1,11 +1,17 @@
-import { Injectable } from '@nestjs/common';
-import { CreateStudentDto } from './dto/create-student.dto';
+import { Injectable, Inject } from '@nestjs/common';
+import { Repository } from 'typeorm';
+import CreateStudentDto from './dto/create-student.dto';
 import { UpdateStudentDto } from './dto/update-student.dto';
-import { Student } from './entities/student.entity';
+import { Student } from './student.entity';
+
 
 
 @Injectable()
 export class StudentService {
+  constructor(
+    @Inject('STUDENT_REPOSITORY')
+    private studentRepository: Repository<Student>,
+  ) {}
 
   private readonly students: Student[] = [];
 
