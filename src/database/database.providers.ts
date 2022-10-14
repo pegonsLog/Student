@@ -12,7 +12,7 @@ export const databaseProviders = [
         password: 'test',
         database: 'test',
         entities: [
-            __dirname + '/../modules/**/**/*.entity{.ts,.js}',
+            __dirname + './modules/**/**/*.entity{.ts,.js}',
         ],
         synchronize: true,
       });
