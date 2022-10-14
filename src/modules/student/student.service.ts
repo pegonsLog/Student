@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { Repository } from 'typeorm';
 import { CreateStudentDto } from './dto/create-student.dto';
 import { UpdateStudentDto } from './dto/update-student.dto';
 import { Student } from './entities/student.entity';
@@ -30,7 +29,7 @@ export class StudentService {
   }
 
   findOne(id: number) {
-    return ;
+    return '';
   }
 
   update(id: number, updateStudentDto: UpdateStudentDto) {
